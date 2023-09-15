@@ -8,7 +8,7 @@ Additionally, while the challenge mentioned using S3, I chose to use Firebase fo
  
 While I am sure I can learn and effectively use RedwoodJS and GraphQL given some time, I wanted to ensure I provided a solution in a timely manner. So, I've completed the challenge using Next.js, Prisma, and React.
 
-Please note, I've also recorded a video showcasing the application in action, which provides an in-depth view of its functionality. The video is available at [this link]([youtu.be/lpqzKOvbeEs])! 
+Please note, I've also recorded a video showcasing the application in action, which provides an in-depth view of its functionality. The video is available at [this link](https://www.youtube.com/watch?v=lpqzKOvbeEs)! 
 
 ## Setting Up the Project  
 
@@ -21,7 +21,7 @@ git clone https://github.com/ArantesJoao/wrapt-challenge
 ``
 
 ``
-cd [repository-name]
+cd wrapt-challenge
 ``
 ### Step 2.  Create a `.env` file at the root of the `wrapt-uploader` directory and add the following values: 
 ``
