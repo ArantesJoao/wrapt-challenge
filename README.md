@@ -1,3 +1,4 @@
+
 # Wrapt-Uploader: A Next.js Technical Challenge Submission 
 
 ## Disclaimer:
@@ -16,13 +17,20 @@ Please note, I've also recorded a video showcasing the application in action, wh
 ``
 git clone https://github.com/ArantesJoao/wrapt-challenge
 ``
+
 ``
 cd [repository-name]
 ``
 ### Step 2.  Create a `.env` file at the root of the `wrapt-uploader` directory and add the following values: 
 ``
-DATABASE_URL="mongodb+srv://wrapt:technicalchallenge@wraptuploader.ejjvwsm.mongodb.net/files"
+DATABASE_URL="mongodb+srv://wrapt:technicalchallenge@wraptuploader.ejjvwsm.mongodb.net/files" 
+``
+
+``
 FIREBASE_API_KEY="AIzaSyDbDusDCBu-l78RmkzA3dl2GVdEg2t5Ny0"
+``
+
+``
 FIREBASE_APP_ID="1:963003186645:web:7ef1ef46a17aca90c4915c"
 ``
 
@@ -30,6 +38,7 @@ FIREBASE_APP_ID="1:963003186645:web:7ef1ef46a17aca90c4915c"
 ``
 npm install
 ``
+
 ``
 npm run dev
 ``
