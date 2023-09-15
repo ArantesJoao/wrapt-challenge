@@ -23,22 +23,13 @@ git clone https://github.com/ArantesJoao/wrapt-challenge
 ``
 cd wrapt-challenge
 ``
-### Step 2.  Create a `.env` file at the root of the `wrapt-uploader` directory and add the following values: 
-``
-DATABASE_URL="mongodb+srv://wrapt:technicalchallenge@wraptuploader.ejjvwsm.mongodb.net/files" 
-``
-
-``
-FIREBASE_API_KEY="AIzaSyDbDusDCBu-l78RmkzA3dl2GVdEg2t5Ny0"
-``
-
-``
-FIREBASE_APP_ID="1:963003186645:web:7ef1ef46a17aca90c4915c"
-``
-
-### Step 3. Install the required dependencies and run the development server
+### Step 2. Install the required dependencies and run the development server
 ``
 npm install
+``
+
+``
+npx prisma generate
 ``
 
 ``
