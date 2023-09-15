@@ -1,4 +1,6 @@
 import prisma from "@/app/libs/prismadb"
+import { storage } from "@/app/libs/firebaseConfig"
+import { ref, deleteObject } from "firebase/storage"
 
 import { NextRequest, NextResponse } from "next/server"
 
@@ -36,6 +38,10 @@ export async function DELETE(
       fs.unlinkSync(filePath)
     }
   }
+
+  // Delete from Firebase Storage
+  const storageRef = ref(storage, fileToDelete.name)
+  await deleteObject(storageRef)
 
   const file = await prisma.file.deleteMany({
     where: {

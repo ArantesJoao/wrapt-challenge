@@ -17,26 +17,31 @@ const UploadButton = () => {
 
   const handleUpload = async (file: File) => {
     if (file) {
+      const storageRef = ref(storage, file.name);
+
+      // Check if file already exists
+      try {
+        const existingFileURL = await getDownloadURL(storageRef);
+        return '';
+      } catch (error) {
+        // File doesn't exist yet
+      }
+
       const metadata = {
-        contentType: file.type
+        contentType: file.type,
       };
 
-      const storageRef = ref(storage, file.name);
       const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
       return new Promise<string>((resolve, reject) => {
-        uploadTask.on('state_changed',
+        uploadTask.on(
+          'state_changed',
           (snapshot) => {
-            const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            setUploadProgress(progress)
-            switch (snapshot.state) {
-              case 'paused':
-                console.log('Upload is paused');
-                break;
-              case 'running':
-                console.log('Upload is running');
-                break;
-            }
+            const progress = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+
+            setUploadProgress(progress);
           },
           (error) => {
             toast.error(error.message);
@@ -44,21 +49,22 @@ const UploadButton = () => {
           },
           () => {
             getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-              console.log('File available at', downloadURL);
               resolve(downloadURL);
+              setUploadProgress(0)
             });
           }
         );
       });
     }
     return '';
-  }
+  };
 
   const handleFileChange = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
     if (file) {
+      setUploading(true);
       const uploadedUrl = await handleUpload(file);
       setDownloadUrl(uploadedUrl);
 
@@ -72,13 +78,13 @@ const UploadButton = () => {
         serverUrl: uploadedUrl
       }));
 
-      setUploading(true);
-
       const res = await axios.post('/api/file', formData)
 
       if (res.data.success) {
         toast.success(res.data?.message)
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000)
       } else {
         toast.error(res.data?.message)
       }

@@ -28,7 +28,6 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     await writeFile(filePath, buffer)
     const parsedMetadata = JSON.parse(metadata) as FileMetadata
-    console.log(parsedMetadata)
 
     await prisma.file.create({
       data: {

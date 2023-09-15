@@ -18,7 +18,9 @@ const FileSettings: React.FC<FileSettingsProps> = ({ id }) => {
     axios.delete(`/api/file/${id}`)
       .then(() => {
         toast.success("File deleted!")
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000)
       })
       .catch((error) => {
         toast.error(error?.response?.data?.error)
@@ -41,7 +43,9 @@ const FileSettings: React.FC<FileSettingsProps> = ({ id }) => {
     const data = { id, inputName }
     await axios.put(`/api/file/${id}`, data).then(() => {
       toast.success("File updated!")
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000)
     })
       .catch((error) => {
         toast.error(error?.response?.data?.error)
