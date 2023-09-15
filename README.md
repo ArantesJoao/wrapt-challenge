@@ -21,7 +21,7 @@ git clone https://github.com/ArantesJoao/wrapt-challenge
 ``
 
 ``
-cd [repository-name]
+cd wrapt-challenge
 ``
 ### Step 2.  Create a `.env` file at the root of the `wrapt-uploader` directory and add the following values: 
 ``
