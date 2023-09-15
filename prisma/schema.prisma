@@ -2,9 +2,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Just to make everything clear, just like I did on firabaseConfig file: normally, I would obviously set this up using a .env file, but since I have to get this up and running, I would have to send this URL to you guys anyways, so it's just easier to add it here
 datasource db {
   provider = "mongodb"
-  url      = env("DATABASE_URL")
+  url      = "mongodb+srv://wrapt:technicalchallenge@wraptuploader.ejjvwsm.mongodb.net/files"
 }
 
 model File {
