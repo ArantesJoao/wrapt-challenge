@@ -24,7 +24,7 @@ export default function RootLayout({
         <div className='min-h-[100vh] bg-[#C9D7E2] p-24 flex flex-col' >
           <ToasterProvider />
           <div
-            className="bg-neutral-100 rounded-lg px-10 pb-5 flex-grow flex flex-col"
+            className="bg-neutral-100 rounded-lg px-10 pb-5 flex-grow flex flex-col drop-shadow-2xl"
           >
             <header className="flex justify-center w-full flex-row px-4 py-5">
               <div className="flex items-center gap-2">

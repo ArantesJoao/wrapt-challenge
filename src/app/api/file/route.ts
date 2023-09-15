@@ -28,13 +28,14 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     await writeFile(filePath, buffer)
     const parsedMetadata = JSON.parse(metadata) as FileMetadata
+    console.log(parsedMetadata)
 
     await prisma.file.create({
       data: {
         name: parsedMetadata.name,
         size: smartSizeConverter(parsedMetadata.size),
         type: getExtension(parsedMetadata.type) as string,
-        serverUrl: "",
+        serverUrl: parsedMetadata.serverUrl,
         path: filePath,
       },
     })

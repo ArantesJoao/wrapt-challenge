@@ -3,4 +3,5 @@ export interface FileMetadata {
   size: number
   lastModified: number
   type: string
+  serverUrl: string
 }
