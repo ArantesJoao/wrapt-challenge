@@ -3,6 +3,8 @@
 
 ## Disclaimer:
 I wanted to mention that I initially tried to complete the challenge using RedwoodJS according to the recommendation to read about it. I took the time to go through the RedwoodJS tutorial, and the code for that can be found in the repository [here](https://github.com/ArantesJoao/redwoodblog). However, while trying to initiate the main project using RedwoodJS, I encountered multiple errors, mainly linked to the CLI commands. While I observed similar issues on their forums, especially regarding generating scaffolds and SDLs, I understand that these challenges are likely due to my unfamiliarity with their specific patterns and best practices.
+
+Additionally, while the challenge mentioned using S3, I chose to use Firebase for this submission. The only reason was that S3 required a credit card for setup, because of their pay-as-you-use model, whereas Firebase offered a free plan without needing credit card information. That being said, I'm quite familiar with the AWS S3 SDK and use it extensively in my current job. I'm confident in implementing and integrating S3 services when required.
  
 While I am sure I can learn and effectively use RedwoodJS and GraphQL given some time, I wanted to ensure I provided a solution in a timely manner. So, I've completed the challenge using Next.js, Prisma, and React.
 
